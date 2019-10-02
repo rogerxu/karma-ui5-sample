@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "name": "AMD Ryzen 5 2600",
+      "description": "CPU",
+      "lastUpdateTime": 1525835307081
+    },
+    {
+      "id": "2",
+      "name": "MSI B450M Mortar",
+      "description": "Motherboard",
+      "lastUpdateTime": 1525835107081
+    },
+    {
+      "id": "3",
+      "name": "RX580 2048SP 8G",
+      "description": "Video Card",
+      "lastUpdateTime": 1525835907081
+    },
+    {
+      "id": "4",
+      "name": "Intel SSD DC P4610 3.2TB",
+      "description": "SSD",
+      "lastUpdateTime": 1525835907081
+    }
+  ]
+}

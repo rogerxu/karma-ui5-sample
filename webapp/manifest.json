@@ -1,0 +1,182 @@
+{
+  "_version": "1.12.0",
+  "sap.app": {
+    "id": "demo.app.sample",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "ach": "",
+    "resources": "resources.json",
+    "dataSources": {
+      "mainService": {
+        "uri": "odata/v2/northwind/",
+        "type": "OData",
+        "settings": {
+          "annotations": [
+            "annotations"
+          ],
+          "odataVersion": "2.0",
+          "localUri": "localService/metadata.xml"
+        }
+      },
+      "annotations": {
+        "uri": "annotations/annotations.xml",
+        "type": "ODataAnnotation",
+        "settings": {
+          "localUri": ""
+        }
+      },
+      "jsonService": {
+        "uri": "data/worklist",
+        "type": "JSON",
+        "settings": {
+          "localUri": "localService/mockdata/worklist.json",
+          "maxAge": 30
+        }
+      }
+    },
+    "offline": false,
+    "sourceTemplate": {
+      "id": "html5moduletemplates.basicSAPUI5ApplicationProjectModule",
+      "version": "1.40.12"
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "Sample-display": {
+          "semanticObject": "Sample",
+          "action": "display",
+          "title": "{{appTitle}}",
+          "icon": "sap-icon://list",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    },
+    "supportedThemes": [
+      "sap_fiori_3",
+      "sap_belize_hcb",
+      "sap_belize_hcw"
+    ]
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "rootView": {
+      "viewName": "demo.app.sample.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "app"
+    },
+    "resources": {
+      "js": [],
+      "css": []
+    },
+    "dependencies": {
+      "minUI5Version": "1.65.0",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {},
+        "sap.ui.layout": {},
+        "sap.f": {},
+        "sap.ushell": {},
+        "sap.collaboration": {
+          "lazy": true
+        }
+      },
+      "components": {}
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "demo.app.sample.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true
+      },
+      "json": {
+        "dataSource": "jsonService"
+      }
+    },
+    "services": {
+      "ShellUIService": {
+        "factoryName": "sap.ushell.ui5service.ShellUIService",
+        "lazy": false,
+        "settings": {
+          "setTitle": "auto"
+        }
+      }
+    },
+    "extends": {
+      "extensions": {}
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "demo.app.sample.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "bypassed": {
+          "target": [
+            "notFound"
+          ]
+        },
+        "async": true
+      },
+      "routes": [
+        {
+          "name": "list",
+          "pattern": "",
+          "target": "list"
+        }
+      ],
+      "targets": {
+        "list": {
+          "viewName": "List",
+          "viewId": "list"
+        },
+        "notFound": {
+          "viewName": "NotFound",
+          "viewId": "notFound"
+        }
+      }
+    }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "transactional"
+  },
+  "sap.platform.cf": {
+    "oAuthScopes": [
+      "$XSAPPNAME.sample.r"
+    ]
+  }
+}
