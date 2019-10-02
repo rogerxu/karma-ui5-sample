@@ -4,9 +4,12 @@
   "description": "Karma UI5 sample",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test:ci",
+    "build": "grunt",
+    "lint": "grunt eslint",
+    "test": "npm run lint && npm run test:ci && npm run sonar",
     "test:ci": "karma start karma-ci.conf.js",
-    "test:debug": "karma start"
+    "test:debug": "karma start",
+    "sonar": "grunt sonar"
   },
   "repository": {
     "type": "git",
@@ -19,6 +22,9 @@
   },
   "homepage": "https://github.com/rogerxu/karma-ui5-sample#readme",
   "devDependencies": {
+    "@sap/grunt-sapui5-bestpractice-build": "1.4.1",
+    "eslint": "^6.5.1",
+    "grunt-sonar-runner": "^2.4.8",
     "karma": "^4.3.0",
     "karma-chrome-launcher": "^3.1.0",
     "karma-coverage": "^2.0.1",
