@@ -4,7 +4,7 @@
   "description": "Karma UI5 sample",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test:debug",
+    "test": "npm run test:ci",
     "test:ci": "karma start karma-ci.conf.js",
     "test:debug": "karma start"
   },
