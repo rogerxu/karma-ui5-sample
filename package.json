@@ -1,0 +1,28 @@
+{
+  "name": "karma-ui5-sample",
+  "version": "1.0.0",
+  "description": "Karma UI5 sample",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test:debug",
+    "test:ci": "karma start karma-ci.conf.js",
+    "test:debug": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rogerxu/karma-ui5-sample.git"
+  },
+  "author": "Roger Xu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rogerxu/karma-ui5-sample/issues"
+  },
+  "homepage": "https://github.com/rogerxu/karma-ui5-sample#readme",
+  "devDependencies": {
+    "karma": "^4.3.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-coverage": "^2.0.1",
+    "karma-junit-reporter": "^1.2.0",
+    "karma-ui5": "^1.1.0"
+  }
+}
